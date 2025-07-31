@@ -18,6 +18,11 @@ export default function Itanhaem(){
         <View style={styles.bloco}>
             <Text style={styles.Texto}>Previsão do Tempo para Itanhaém</Text>
 
+
+
+
+            
+
             <FlatList 
                 data={dados}
                 keyExtractor={(item)=>item.date}

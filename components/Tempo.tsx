@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 
  interface propsTempo{
         date:string,
@@ -9,6 +9,20 @@ import {View, Text, StyleSheet} from 'react-native';
     }
 
 export default function Tempo({date, max, min, description, condition } : propsTempo){
+    const icones: Record<string, any> = {
+        clear_day: require('../assets/png/clear_day.png'),
+        clear_night: require('../assets/png/clear_night.png'),
+        cloud: require('../assets/png/cloud.png'),
+        cloudly_day: require('../assets/png/cloudly_day.png'),
+        cloudly_night: require('../assets/png/cloudly_night.png'),
+        fog: require('../assets/png/fog.png'),
+        hail: require('../assets/png/hail.png'),
+        none_day: require('../assets/png/none_day.png'),
+        none_night: require('../assets/png/none_night.png'),
+        rain: require('../assets/png/rain.png'),
+        snow: require('../assets/png/snow.png'),
+        storm: require('../assets/png/storm.png'), 
+    }
 
     return(
         <View style={styles.principal}>
@@ -17,6 +31,10 @@ export default function Tempo({date, max, min, description, condition } : propsT
                 <Text style={styles.texto}>Mín: {min}</Text>
                 <Text style={styles.texto}>Descrição: {description}</Text>
                 <Text style={styles.texto}>Cond: {condition}</Text>
+                <Image 
+                    style={styles.imagem}
+                    source={icones[condition]}
+                />
         </View>
     );
 }
@@ -30,5 +48,9 @@ const styles = StyleSheet.create({
     },
     texto:{
         fontSize:20
+    },
+    imagem:{
+        width:80,
+        height:80
     }
 });
