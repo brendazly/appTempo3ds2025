@@ -1,14 +1,15 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 
- interface propsTempo{
-        date:string,
-        max:number,
-        min:number,
-        description:string,
-        condition:string
-    }
+interface propsTempo {
+    date: string,
+    max: number,
+    min: number,
+    description: string,
+    condition: string,
+    moon_phase: string
+}
 
-export default function Tempo({date, max, min, description, condition } : propsTempo){
+export default function Tempo({ date, max, min, description, condition, moon_phase }: propsTempo) {
     const icones: Record<string, any> = {
         clear_day: require('../assets/png/clear_day.png'),
         clear_night: require('../assets/png/clear_night.png'),
@@ -21,36 +22,43 @@ export default function Tempo({date, max, min, description, condition } : propsT
         none_night: require('../assets/png/none_night.png'),
         rain: require('../assets/png/rain.png'),
         snow: require('../assets/png/snow.png'),
-        storm: require('../assets/png/storm.png'), 
+        storm: require('../assets/png/storm.png'),
     }
 
-    return(
+
+
+    return (
         <View style={styles.principal}>
-                <Text style={styles.texto}>Previsão para o dia: {date}</Text>
-                <Text style={styles.texto}>Máx: {max}</Text>
-                <Text style={styles.texto}>Mín: {min}</Text>
-                <Text style={styles.texto}>Descrição: {description}</Text>
-                <Text style={styles.texto}>Cond: {condition}</Text>
-                <Image 
-                    style={styles.imagem}
-                    source={icones[condition]}
-                />
+            <Text style={styles.texto}>Previsão para o dia: {date}</Text>
+            <Text style={styles.texto}>Máx: {max}</Text>
+            <Text style={styles.texto}>Mín: {min}</Text>
+            <Text style={styles.texto}>Descrição: {description}</Text>
+            <Text style={styles.texto}>Cond: {condition}</Text>
+            <Image
+                style={styles.imagem}
+                source={icones[condition]}
+            />
+            <Image
+                style={styles.imagem}
+                source={{ uri:`https://assets.hgbrasil.com/weather/icons/moon/${moon_phase}.png`}}
+            />
+
         </View>
     );
 }
 const styles = StyleSheet.create({
-    principal:{
-        width:'80%',
-        borderWidth:2,
-        borderRadius:30,
-        padding:20,
-        margin:20
+    principal: {
+        width: '80%',
+        borderWidth: 2,
+        borderRadius: 30,
+        padding: 20,
+        margin: 20
     },
-    texto:{
-        fontSize:20
+    texto: {
+        fontSize: 20
     },
-    imagem:{
-        width:80,
-        height:80
+    imagem: {
+        width: 80,
+        height: 80
     }
 });

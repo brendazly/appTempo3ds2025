@@ -16,7 +16,24 @@ export default function Home(){
                     style={styles.btn}
                     onPress={()=>navigation.navigate('Itanhaem' as never)}
                 >
-                    <Text style={styles.textoBtn}>Itanhaém</Text>
+                </TouchableOpacity>
+
+                  <TouchableOpacity 
+                    style={styles.btn}
+                    onPress={()=>navigation.navigate('PraiaGrande' as never)}
+                >
+                </TouchableOpacity>
+
+                  <TouchableOpacity 
+                    style={styles.btn}
+                    onPress={()=>navigation.navigate('Santos' as never)}
+                >
+                </TouchableOpacity>
+
+                  <TouchableOpacity 
+                    style={styles.btn}
+                    onPress={()=>navigation.navigate('São Vicente' as never)}
+                >
                 </TouchableOpacity>
         </View>
     );
