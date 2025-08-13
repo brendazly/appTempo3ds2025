@@ -3,11 +3,11 @@ import {View, Text, StyleSheet, FlatList} from 'react-native';
 import Tempo from '../components/Tempo';
 import Api from '../components/Api';
 
-export default function Itanhaem(){
+export default function Santos(){
     const [dados, setDados] = useState<any[]>([]);
 
     async function buscaTempo(){
-        const response = await Api.get('https://api.hgbrasil.com/weather?array_limit=3&fields=only_results,temp,city_name,forecast,condition,max,min,description,date&key=#ebb9ee48&city_name=Santos,SP');
+        const response = await Api.get('weather?array_limit=4&fields=only_results,temp,city_name,forecast,condition,max,min,description,moon_phase,date,&key=f5179305&city_name=Santos,SP');
         setDados(response.data.forecast);
     }
     useEffect(

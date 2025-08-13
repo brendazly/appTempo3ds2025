@@ -8,7 +8,7 @@ export default function Itanhaem(){
     const [dados, setDados] = useState<any[]>([]);
 
     async function buscaTempo(){
-        const response = await Api.get('weather?array_limit=4&fields=only_results,temp,city_name,forecast,condition,max,min,description,date,moom_phase&key=f5179305&city_name=Itanhaem,SP');
+        const response = await Api.get('weather?array_limit=4&fields=only_results,temp,city_name,forecast,condition,max,min,description,moon_phase,date,&key=f5179305&city_name=Itanhaem,SP');
         setDados(response.data.forecast);
     }
     useEffect(
@@ -34,18 +34,23 @@ export default function Itanhaem(){
 }
 
 const styles = StyleSheet.create({
-    bloco:{
+    bloco:{ 
         flex:1,
         alignItems:'center',
         justifyContent:'flex-start',
-        marginTop:40
+        marginTop:40,
+        marginLeft:30,
+   
     },
     Texto:{
         fontSize:20,
+        marginRight:32,
+        
     },
     lista:{
         height:'70%',
-        width:'100%'
+        width:'100%',
+        
     }
     
 });

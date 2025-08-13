@@ -34,14 +34,19 @@ export default function Tempo({ date, max, min, description, condition, moon_pha
             <Text style={styles.texto}>Mín: {min}</Text>
             <Text style={styles.texto}>Descrição: {description}</Text>
             <Text style={styles.texto}>Cond: {condition}</Text>
-            <Image
-                style={styles.imagem}
-                source={icones[condition]}
-            />
-            <Image
-                style={styles.imagem}
-                source={{ uri:`https://assets.hgbrasil.com/weather/icons/moon/${moon_phase}.png`}}
-            />
+           
+           
+  <View style={styles.colection}>
+                <Image 
+                    style={styles.imagem}
+                    source={icones[condition]}
+                />
+
+                <Image 
+                    style={styles.imagem}
+                    source={{uri: `https://assets.hgbrasil.com/weather/icons/moon/${moon_phase}.png`}}
+                />
+            </View>
 
         </View>
     );
@@ -57,6 +62,12 @@ const styles = StyleSheet.create({
     texto: {
         fontSize: 20
     },
+
+        colection:{
+        flexDirection:"row",
+        marginLeft:40
+    },
+
     imagem: {
         width: 80,
         height: 80

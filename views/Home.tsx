@@ -10,30 +10,35 @@ export default function Home(){
     const navigation = useNavigation();
     return(
         <View style={styles.bloco}>
-                <Text style={styles.Texto}>Seja bem Vindo</Text>
+                <Text style={styles.Texto}>Seja bem-vindo!</Text>
+                <Text style={styles.Texto2}>Verifique as previsões do tempo</Text>
 
                 <TouchableOpacity 
                     style={styles.btn}
                     onPress={()=>navigation.navigate('Itanhaem' as never)}
                 >
+                <Text style={styles.textoBtn}>Itanhaém</Text>
                 </TouchableOpacity>
 
                   <TouchableOpacity 
                     style={styles.btn}
                     onPress={()=>navigation.navigate('PraiaGrande' as never)}
                 >
+                    <Text style={styles.textoBtn}>Praia Grande</Text>
                 </TouchableOpacity>
 
-                  <TouchableOpacity 
+                <TouchableOpacity 
                     style={styles.btn}
                     onPress={()=>navigation.navigate('Santos' as never)}
                 >
+                <Text style={styles.textoBtn}>Santos</Text>
                 </TouchableOpacity>
 
                   <TouchableOpacity 
                     style={styles.btn}
-                    onPress={()=>navigation.navigate('São Vicente' as never)}
+                    onPress={()=>navigation.navigate('SaoVicente' as never)}
                 >
+                <Text style={styles.textoBtn}>São Vicente</Text>
                 </TouchableOpacity>
         </View>
     );
@@ -43,13 +48,23 @@ const styles = StyleSheet.create({
     bloco:{
         flex:1,
         alignItems:'center',
-        justifyContent:'center'
+        justifyContent:'flex-start',
     },
     Texto:{
-        fontSize:30
+        marginTop:30,
+        fontSize:30,
+        fontWeight:700
     },
+
+     Texto2:{
+        marginTop:20,
+        fontSize:30,
+        fontWeight:400,
+        textAlign:'center'
+    },
+
     btn:{
-       backgroundColor:"#5599AA",
+       backgroundColor:"#c9d7ebff",
        width:'80%',
        padding:10,
        marginBottom:20,
@@ -57,7 +72,7 @@ const styles = StyleSheet.create({
        borderRadius:20
     },
     textoBtn:{
-        color:"#FFF",
+        color:"#0a1a30ff",
         fontSize:30,
         textAlign:'center'
     }
